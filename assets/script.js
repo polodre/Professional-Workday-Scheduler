@@ -1,4 +1,4 @@
-displayEvents(); 
+displayEvents() || []; 
 // Set current date
 
 $("#currentDay").text(moment().format("dddd, MMMM Do"));
@@ -38,6 +38,7 @@ $(".saveBtn").click(function() {
 
 const keys = Object.keys(localStorage);
 keys.forEach(displayEvents);
+
 function displayEvents(item) {
     $(`*[data-hour="${item}"]`).val(JSON.parse(localStorage.getItem(`${item}`)));
 };
