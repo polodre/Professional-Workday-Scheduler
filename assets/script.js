@@ -43,4 +43,12 @@ function displayEvents(item) {
     $(`*[data-hour="${item}"]`).val(JSON.parse(localStorage.getItem(`${item}`)));
 };
 
+
+// Clear schedule
+
+$("#clearSchedule").click(function() {
+    localStorage.clear();
+    window.location.assign("./index.html");
+}); 
+
     
