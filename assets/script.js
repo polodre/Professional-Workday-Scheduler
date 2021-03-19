@@ -1,4 +1,5 @@
-// Set current date in header
+displayEvents(); 
+// Set current date
 
 $("#currentDay").text(moment().format("dddd, MMMM Do"));
 
@@ -25,7 +26,6 @@ $(plannerInput).each(function() {
 
 });
 
-// Save text entered into an input on clicking save button
 
 $(".saveBtn").click(function() {
     event.preventDefault();
@@ -34,16 +34,12 @@ $(".saveBtn").click(function() {
     var eventEntered = $(this).prev().val();
 
     localStorage.setItem(hourValue, JSON.stringify(eventEntered));
-
-    for (var i = 0; i < localStorage.length; i++) {
-
-        let hour = i + 9;
-        console.log(localStorage.getItem(hour))
-
-        // pick up here trying to use hour to set text
-
-    }
 });
 
+const keys = Object.keys(localStorage);
+keys.forEach(displayEvents);
+function displayEvents(item) {
+    $(`*[data-hour="${item}"]`).val(JSON.parse(localStorage.getItem(`${item}`)));
+};
 
-// $(`*[data-hour="${hourValue}"]`).text() 
+    
