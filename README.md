@@ -1,6 +1,6 @@
 # homework-5
 
-https://polodre.github.io/homework-5/
+https://polodre.github.io/Professional-Workday-Scheduler/
 
 GIVEN I am using a daily planner to create a schedule
 
